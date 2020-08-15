@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'maven:3-alpine'
-            args '-v /root/.m2:/root/.m2 -u root --privileged'
+            args '-v /root/.m2:/root/.m2 -v /usr/local/bin/maven/conf/settings.xml:/usr/share/maven/conf/settings.xml -u root --privileged'
         }
     }
     stages {
